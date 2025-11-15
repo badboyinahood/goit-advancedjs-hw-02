@@ -6,35 +6,28 @@ const form = document.querySelector(".form");
 form.addEventListener("submit", event => {
   event.preventDefault();
 
-  const delay = Number(form.elements.delay.value);
-  const state = form.elements.state.value;
+  const delay = Number(form.delay.value);
+  const state = form.state.value;
 
-  // Создаём промис
-  const promise = new Promise((resolve, reject) => {
+  new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (state === "fulfilled") {
-        resolve(delay);
-      } else {
-        reject(delay);
-      }
+      state === "fulfilled" ? resolve(delay) : reject(delay);
     }, delay);
-  });
-
-  promise
+  })
     .then(delay => {
       iziToast.success({
         title: "Success",
         message: `Fulfilled promise in ${delay}ms`,
-        position: "topRight",
+        position: "topRight"
       });
     })
-
-    // Обработка ошибки
     .catch(delay => {
       iziToast.error({
         title: "Error",
         message: `Rejected promise in ${delay}ms`,
-        position: "topRight",
+        position: "topRight"
       });
     });
+
+  form.reset();
 });
