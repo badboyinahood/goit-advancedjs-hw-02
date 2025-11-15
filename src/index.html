@@ -2,22 +2,49 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>Homework Navigator</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
+
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
+    <main style="padding: 40px; text-align: center;">
+      <h1>GoIT Advanced JS — Homework 02</h1>
 
-    <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
+      <nav style="display: flex; flex-direction: column; gap: 20px; margin-top: 40px;">
+
+        <a
+          href="./1-timer.html"
+          style="
+            font-size: 20px;
+            padding: 15px 25px;
+            background: #4e75ff;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            width: 260px;
+            margin: 0 auto;
+          "
+        >
+          Task 1 — Countdown Timer
+        </a>
+
+        <a
+          href="./2-snackbar.html"
+          style="
+            font-size: 20px;
+            padding: 15px 25px;
+            background: #4e75ff;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            width: 260px;
+            margin: 0 auto;
+          "
+        >
+          Task 2 — Promise Generator
+        </a>
+      </nav>
     </main>
-
-    <load src="./partials/footer.html" />
-
-    <script type="module" src="./main.js"></script>
   </body>
 </html>

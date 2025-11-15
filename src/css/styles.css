@@ -1,18 +1,156 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
+/* Основные настройки страницы */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f6fa;
+  margin: 0;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+/* Инпут выбора даты */
+#datetime-picker {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #dcdde1;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+#datetime-picker:disabled {
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+/* Кнопка Start */
+[data-start] {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4cd137;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+[data-start]:hover:not(:disabled) {
+  background-color: #44bd32;
+}
+
+[data-start]:disabled {
+  background-color: #7f8fa6;
+  cursor: not-allowed;
+}
+
+/* Контейнер таймера */
+.timer {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+/* Каждый отдельный блок (Days / Hours / Minutes / Seconds) */
+.field {
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Цифры */
+.value {
+  display: block;
+  font-size: 42px;
+  font-weight: bold;
+  color: #2f3640;
+}
+
+/* Название блока */
+.label {
+  font-size: 14px;
+  color: #718093;
+  margin-top: 5px;
+}
+
+/* Отступ между input и кнопкой Start */
+.timer-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* расстояние между input и кнопкой */
+}
+
+/* Заголовок */
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 36px;
+  color: #2f3640;
+}
+
+/* Форма */
+.form {
+  width: 320px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Поле ввода delay */
+.form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #dcdde1;
+}
+
+/* Fieldset для радиокнопок */
+fieldset {
+  border: 1px solid #dcdde1;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+legend {
+  padding: 0 8px;
+  color: #718093;
+  font-size: 14px;
+}
+
+/* Радиокнопки + подписи */
+fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #2f3640;
+}
+
+/* Кнопка Submit */
+button[type="submit"] {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4cd137;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #44bd32;
+}
